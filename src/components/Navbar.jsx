@@ -11,10 +11,9 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
 
-        {/* Main Navbar */}
-        <div className="h-20 flex items-center justify-between">
+        <div className="h-20 flex items-center justify-between gap-2">
 
           {/* Logo */}
           <a
@@ -25,7 +24,7 @@ function Navbar() {
             <img
               src={logo}
               alt="Goagames"
-              className="w-16 h-16 object-contain"
+              className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
             />
           </a>
 
@@ -62,10 +61,9 @@ function Navbar() {
 
           </nav>
 
-          {/* Desktop Buttons */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Desktop Login/Register */}
+          <div className="hidden lg:flex items-center gap-3">
 
-            {/* Login */}
             <a
               href="https://www.goagamea.com/#/login"
               className="px-5 py-2.5 rounded-lg border border-blue-600 text-blue-600 font-semibold hover:bg-blue-50 transition"
@@ -73,7 +71,6 @@ function Navbar() {
               Login
             </a>
 
-            {/* Register */}
             <a
               href="http://www.goaok.link/#/register?invitationCode=20996340"
               className="px-5 py-2.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition shadow-sm"
@@ -83,16 +80,34 @@ function Navbar() {
 
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 text-gray-700 text-2xl hover:bg-gray-50 transition"
-            aria-label="Toggle menu"
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? "×" : "☰"}
-          </button>
+          {/* Mobile Login/Register + Menu */}
+          <div className="lg:hidden flex items-center gap-1.5 sm:gap-2">
+
+            <a
+              href="https://www.goagamea.com/#/login"
+              className="px-2.5 sm:px-4 py-2 rounded-lg border border-blue-600 text-blue-600 text-xs sm:text-sm font-semibold hover:bg-blue-50 transition whitespace-nowrap"
+            >
+              Login
+            </a>
+
+            <a
+              href="http://www.goaok.link/#/register?invitationCode=20996340"
+              className="px-2.5 sm:px-4 py-2 rounded-lg bg-blue-600 text-white text-xs sm:text-sm font-semibold hover:bg-blue-700 transition shadow-sm whitespace-nowrap"
+            >
+              Register
+            </a>
+
+            <button
+              type="button"
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-lg border border-gray-200 text-gray-700 text-xl sm:text-2xl hover:bg-gray-50 transition"
+              aria-label="Toggle menu"
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? "×" : "☰"}
+            </button>
+
+          </div>
 
         </div>
 
@@ -135,29 +150,6 @@ function Navbar() {
               </a>
 
             </nav>
-
-            {/* Mobile Buttons */}
-            <div className="flex gap-3 px-4 pt-3">
-
-              {/* Mobile Login */}
-              <a
-                href="https://www.goagamea.com/#/login"
-                onClick={closeMenu}
-                className="flex-1 px-4 py-2.5 rounded-lg border border-blue-600 text-blue-600 font-semibold hover:bg-blue-50 transition text-center"
-              >
-                Login
-              </a>
-
-              {/* Mobile Register */}
-              <a
-                href="http://www.goaok.link/#/register?invitationCode=20996340"
-                onClick={closeMenu}
-                className="flex-1 px-4 py-2.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition text-center"
-              >
-                Register
-              </a>
-
-            </div>
 
           </div>
         )}
